@@ -1,10 +1,10 @@
 import React from 'react'
 import { Carousel } from 'react-bootstrap'
-import slider1 from '../../src/assets/img/1.png'
-import slider2 from '../../src/assets/img/2.png'
-import slider3 from '../../src/assets/img/3.png'
-import slider4 from '../../src/assets/img/4.png'
-import slider5 from '../../src/assets/img/5.png'
+import slider1 from '../../assets/img/1.png'
+import slider2 from '../../assets/img/2.png'
+import slider3 from '../../assets/img/3.png'
+import slider4 from '../../assets/img/4.png'
+import slider5 from '../../assets/img/5.png'
 const Banner = () => {
   return (
     <div className='p-5'>

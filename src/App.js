@@ -1,14 +1,14 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import NavBar from './components/shared/NavBar'
-import Home from './components/Home'
+import Home from './components/Home/Home'
 import Purchase from './components/Purchase'
 import Footer from './components/shared/Footer'
 import Login from './components/Access/Login'
 import NotFound from './components/NotFound/NotFound'
 import Register from './components/Access/Register'
 import { Toaster } from 'react-hot-toast'
-import Blog from './components/Blog'
+import Blog from './components/Blog/Blog'
 
 function App () {
   return (
