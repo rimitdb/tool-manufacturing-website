@@ -21,7 +21,7 @@
         "_id": 3,
         "name": "Wrench Set Spanner",
         "img": "https://i.ibb.co/qm82tsF/p-3.jpg",
-        "description": "Flexible 1/2 inch Ratchet Wrench Set Combination Wrench Set Spanner",
+        "description": "1/2 inch Ratchet Wrench Set Combination Wrench",
         "min_order_quantity": 50,
 		"available_quantity": 1000,
 		"per_unit_price": 12
@@ -39,7 +39,7 @@
         "_id": 5,
         "name": "Cordless Electric Screwdriver Drill",
         "img": "https://i.ibb.co/bmdQLHb/p-5.jpg",
-        "description": "Lithium Battery 3.6V 12V 16V 20V Cordless Electric Screwdriver Drill",
+        "description": "Lithium Battery 3.6V 12V 16V 20V Cordless Drill",
         "min_order_quantity": 50,
 		"available_quantity": 500,
 		"per_unit_price": 20

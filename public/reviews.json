@@ -1,0 +1,65 @@
+[
+    {
+      "_id": 1,
+      "name": "Robert",
+      "rating": 5,
+      "label": "CG",
+      "text_": "Love there service!  Well planned, very comfortable.  I love it! Very pretty"
+    },
+    {
+      "_id": 2,
+      "name": "Helski",
+      "rating": 5,
+      "label": "CG",
+      "text_": "love it, a great upgrade from the original.  I've had mine for a couple of years"
+    },
+    {
+      "_id": 3,
+      "name": "Moringa",
+      "rating": 5,
+      "label": "CG",
+      "text_": "This agency save my time. I love the service they prov_ided."
+    },
+    {
+      "_id": 4,
+      "name": "Thomas",
+      "rating": 2.5,
+      "label": "CG",
+      "text_": "Missing details information, but it is a option for the price!  "
+    },
+    {
+      "_id": 5,
+      "name": "Loverin",
+      "rating": 4.7,
+      "label": "CG",
+      "text_": "Very organized and planned service. We have had our best traveling experience"
+    },
+    {
+      "_id": 6,
+      "name": "Masduk",
+      "rating": 3.5,
+      "label": "CG",
+      "text_": "I WANTED DIFFERENT PACKAGES BUT THEY ARE NOT."
+    },
+    {
+      "_id": 7,
+      "name": "Petter",
+      "rating": 4,
+      "label": "CG",
+      "text_": "How could I give them lower rating af the the good experience we had"
+    },
+    {
+      "_id": 8,
+      "name": "Hasaranga",
+      "rating": 3.9,
+      "label": "CG",
+      "text_": "It was really great experience to travel anew place with your team. Amazing!!"
+    },
+    {
+      "_id": 9,
+      "name": "Schaweb",
+      "rating": 5,
+      "label": "CG",
+      "text_": "They are the perfect agency for me and the only thing I wish they had a little more packages."
+    }
+  ]
