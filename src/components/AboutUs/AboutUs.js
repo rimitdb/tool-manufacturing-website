@@ -4,7 +4,7 @@ const AboutUs = () => {
     return (
         <div className='container mt-5'>
             <h3 className='text-danger mb-5'>About Us</h3>
-            <div className='d-flex flex-md-column flex-lg-row'>
+            <div className='d-flex flex-sm-column flex-md-column flex-lg-row'>
                 <div className='text-start'>
                     <h4>The Company</h4>
                     <p>RIM Electric Tools is established in 2008, with 20 years experience in tools business. FIXTECH is our registered brand. One-stop tools station, including full line of power tools, hand tools, bench tools, air tools, welding machine, water pumps, generators, garden tools and power accessories etc.</p>

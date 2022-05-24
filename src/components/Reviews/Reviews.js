@@ -12,7 +12,7 @@ const Reviews = () => {
 
     return (
         <div className='container mt-5'>
-            <h2>Customers Review</h2>
+            <h2 className='text-danger'>Customers Review</h2>
             <div className='row'>
                 {
                     reviews.slice(0, 6).map(review => <Review
