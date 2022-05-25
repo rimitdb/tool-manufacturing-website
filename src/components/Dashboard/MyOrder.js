@@ -1,19 +1,50 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase.init';
 
 const MyOrder = () => {
     const [orders, setOrders] = useState([]);
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`)
-                .then(res => res.json())
+            fetch(`http://localhost:5000/order?email=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                },
+            })
+                .then(res => {
+                    console.log('res', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/');
+                    }
+                    return res.json()
+                })
                 .then(data => setOrders(data));
         }
 
-    }, [user])
+    }, [user]);
+
+    const deleteOrder = id => {
+        const confirmed = window.confirm("Are You Sure?");
+        if (confirmed) {
+            const url = `http://localhost:5000/order/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    setOrders(data)
+                });
+        }
+    }
 
 
     return (
@@ -36,7 +67,7 @@ const MyOrder = () => {
                                 <th>{index + 1}</th>
                                 <td>{o.toolName}</td>
                                 <td>{o.order_quantity}</td>
-                                <td><button className="btn btn-info">Cancel</button></td>
+                                <td><button onClick={() => deleteOrder(o.toolId)} className="btn btn-info">Cancel</button></td>
                                 <td><button className="btn btn-warning">PAY</button></td>
                             </tr>
 

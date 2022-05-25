@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from "react-fireb
 // import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase.init"
+import useToken from "../../hooks/useToken";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -14,11 +15,14 @@ const Register = () => {
     const requiredFilledCheck = (email !== "") && (password !== "");
     const [
         createUserWithEmailAndPassword,
+        user,
         loading,
         hookError,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+
+    const [token] = useToken(user);
 
     let loginError;
 
@@ -30,6 +34,9 @@ const Register = () => {
         loginError = <p className="text-danger"><small>{error?.message || hookError?.message || updateError?.message}</small></p>
     }
 
+    if (token) {
+        // navigate("/my-order");
+    }
 
     const handleForm = (e) => {
         e.preventDefault();
@@ -39,12 +46,8 @@ const Register = () => {
     const handleRegister = async () => {
 
         await createUserWithEmailAndPassword(email, password)
-
         // toast.success("Verification Email Sent!");
         await updateProfile({ displayName: name })
-            .then(() => {
-                navigate("/")
-            });
 
     }
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth'
 import { useParams } from 'react-router-dom';
-import { Button, Form } from 'react-bootstrap';
 import { auth } from '../firebase.init';
 
 const Purchase = () => {

@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle, useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init'
 import toast from 'react-hot-toast';
 import { Button, Form } from 'react-bootstrap';
+import useToken from '../../hooks/useToken';
 
 
 const Login = () => {
@@ -17,7 +18,17 @@ const Login = () => {
     const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const requiredFilledCheck = (email !== "") && (password !== "");
     const from = location?.state?.from?.pathname || '/';
+    const [token] = useToken(user || gUser);
+
     let loginError;
+
+
+
+    useEffect(() => {
+        if (user || gUser) {
+            navigate(from, { replace: true });
+        }
+    }, [user || gUser]);
 
     if (loading || gLoading) {
         return <p>Loading...</p>;
@@ -27,9 +38,6 @@ const Login = () => {
         loginError = <p className="text-danger"><small>{error?.message || gError?.message}</small></p>
     }
 
-    if (user || gUser) {
-        navigate(from, { replace: true });
-    }
 
     const handleGoogleLogin = () => {
         signInWithGoogle()

@@ -20,13 +20,9 @@ const NavBar = () => {
   }, []);
 
   const handleLogout = () => {
-    signOut(auth).then(() => {
-
-    }).catch((error) => {
-      <p>Error: {error.message}</p>
-    });
-
-  }
+    signOut(auth);
+    localStorage.removeItem('accessToken');
+  };
 
   return (
 
@@ -46,8 +42,6 @@ const NavBar = () => {
               My Portfolio
             </Nav.Link>
             {user?.email ? <Nav.Link className='px-2 text-light' as={Link} to="/dashboard">Dashboard</Nav.Link> : ""}
-            {user?.email ? <Nav.Link className="px-2 text-light" as={Link} to="/add-review">Add Review</Nav.Link> : ""}
-            {user?.email ? <Nav.Link className="px-2 text-light" as={Link} to="/purchase">Manage Order</Nav.Link> : ""}
             {user?.uid ? <p className='text-white text-center'>{user.displayName}</p> : ""}
             {user?.uid ?
               <button onClick={handleLogout} className='btn btn-warning'>Logout</button>
