@@ -14,7 +14,7 @@ const Tools = () => {
       <h3 className="text-center text-danger">Electric Tools</h3>
       <div className="row">
         {
-          tools.map(tool => (
+          tools.slice(0).reverse().map(tool => (
             <ToolDetails
               key={tool._id}
               tool={tool}

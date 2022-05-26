@@ -5,7 +5,7 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('reviews.json')
+        fetch('http://localhost:5000/review')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, []);
@@ -15,7 +15,7 @@ const Reviews = () => {
             <h2 className='text-danger'>Customers Review</h2>
             <div className='row'>
                 {
-                    reviews.slice(0, 6).map(review => <Review
+                    reviews.slice(0).reverse().map(review => <Review
                         key={review._id}
                         review={review}
                     ></Review>)

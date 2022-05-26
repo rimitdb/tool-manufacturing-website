@@ -1,6 +1,7 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 
-const UserRow = ({ user }) => {
+const UserRow = ({ user, refetch }) => {
     const { email, role } = user;
 
     const makeAdmin = () => {
@@ -9,9 +10,17 @@ const UserRow = ({ user }) => {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
-        }).then(res => res.json())
+        }).then(res => {
+            if (res.status === 403) {
+                toast.error('You do not have permission!')
+            }
+            return res.json()
+        })
             .then(data => {
-                console.log(data);
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast.success('Admin Made Successfully !')
+                }
             });
     };
 
