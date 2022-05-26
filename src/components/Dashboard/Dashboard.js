@@ -14,7 +14,7 @@ const Dashboard = () => {
             <div className="drawer-content">
                 <h3 className='text-3xl font-bold text-green-300 my-5'>It's Your Dashboard</h3>
                 <Outlet />
-                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">SideBar</label>
 
             </div>
             <div className="drawer-side">

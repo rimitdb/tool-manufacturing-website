@@ -18,11 +18,10 @@ const AddProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 reset();
             });
 
-        toast("Product Added Successfully");
+        toast.success("Product Added Successfully");
     };
 
 
@@ -39,7 +38,7 @@ const AddProduct = () => {
                         <input className="mb-2" placeholder="Stock" type="number" {...register("available_quantity")} />
                         <input className="mb-2" placeholder="Unit Price:" type="number" {...register("per_unit_price")} />
                         <div className="card-actions justify-center">
-                            <input className="btn btn-warning" type="submit" value="Add Product" />
+                            <input className="btn btn-warning" type="submit" value="Add" />
                         </div>
                     </form>
                 </div>

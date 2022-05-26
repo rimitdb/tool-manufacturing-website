@@ -46,7 +46,7 @@ const MyProfile = () => {
                     <div className="card-body">
                         <h2 className="card-title">Name: {user?.displayName}</h2>
                         <h2 className="card-title">E-Mail: {user?.email}</h2>
-
+                        <h3 className="card-subtitle my-3">Please Update Following Information:</h3>
                         <form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
                             <label className="label">
                                 <span className="label-text">Education</span>

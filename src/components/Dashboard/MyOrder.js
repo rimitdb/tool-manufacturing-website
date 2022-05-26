@@ -1,6 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase.init';
 
@@ -38,8 +39,10 @@ const MyOrder = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    setOrders(data)
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining)
                 });
+            toast.success("Order Deleted!!");
         }
     }
 
@@ -54,6 +57,7 @@ const MyOrder = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Order Quantity</th>
+                            <th>Order Price</th>
                             <th>Action</th>
                             <th>Payment</th>
                         </tr>
@@ -64,14 +68,13 @@ const MyOrder = () => {
                                 <th>{index + 1}</th>
                                 <td>{o.toolName}</td>
                                 <td>{o.order_quantity}</td>
-                                <td><button onClick={() => deleteOrder(o.toolId)} className="btn btn-info">Cancel</button></td>
+                                <td>${o.price}</td>
+                                <td><button onClick={() => deleteOrder(o._id)} className="btn btn-info">Cancel</button></td>
                                 <td><button className="btn btn-warning">PAY</button></td>
                             </tr>
 
                             )
                         }
-
-
                     </tbody>
                 </table>
             </div>

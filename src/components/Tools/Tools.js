@@ -11,7 +11,7 @@ const Tools = () => {
 
   return (
     <div className="container">
-      <h3 className="text-center text-danger">Electric Tools</h3>
+      <h3 className="text-3xl text-center text-danger">Electric Tools</h3>
       <div className="row">
         {
           tools.slice(0).reverse().map(tool => (

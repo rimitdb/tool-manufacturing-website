@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-// import { confirmAlert } from 'react-confirm-alert';
-// import 'react-confirm-alert/src/react-confirm-alert.css';
 
 const ManageAllProduct = () => {
 
@@ -13,30 +11,6 @@ const ManageAllProduct = () => {
             .then(data => setProducts(data))
     }, []);
 
-    // const options = {
-    //     title: 'Warning!!',
-    //     message: 'Are You Sure?',
-    //     buttons: [
-    //         {
-    //             label: 'Yes',
-    //             onClick: () => alert()
-    //         },
-    //         {
-    //             label: 'No',
-    //             onClick: () => 
-    //         }
-    //     ],
-    //     closeOnEscape: true,
-    //     closeOnClickOutside: true,
-    //     keyCodeForClose: [8, 32],
-    //     willUnmount: () => { },
-    //     afterClose: () => { },
-    //     onClickOutside: () => { },
-    //     onKeypress: () => { },
-    //     onKeypressEscape: () => { },
-    //     overlayClassName: "overlay-custom-class-name"
-    // };
-
     const removeItem = id => {
         const proceed = window.confirm("Are you Sure?");
         if (proceed) {
@@ -46,17 +20,16 @@ const ManageAllProduct = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     const remaining = products.filter(product => product._id !== id);
                     setProducts(remaining);
                 });
-            toast("Product Deleted!!");
+            toast.success("Product Deleted!!");
         }
     };
 
     return (
         <div>
-            <h2 className='text-center text-2xl'>Manage All Product: {products.length}</h2>
+            <h2 className='text-center text-2xl'>Manage All Product</h2>
             <table className="table w-full">
                 <thead>
                     <tr>

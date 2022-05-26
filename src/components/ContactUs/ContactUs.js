@@ -2,9 +2,20 @@ import React from 'react';
 
 const ContactUs = () => {
     return (
-        <div>
-            <h4> Please contact with us if ou have any query</h4>
+        <div className='container mx-auto'>
+            <h3 className='text-3xl text-danger mb-5'>Contact Us</h3>
+            <div class="card w-full bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title">Please write us if ou have any query!</h2>
+                    <textarea class="textarea textarea-warning" placeholder="Write Your Message Here...."></textarea>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-outline">Send Message</button>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
     );
 };
 

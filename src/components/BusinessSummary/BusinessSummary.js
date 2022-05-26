@@ -5,7 +5,7 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons'
 const BusinessSummary = () => {
     return (
         <div className='container mt-5'>
-            <h2 className='mb-5 text-danger'>Business Summary</h2>
+            <h2 className='text-3xl mb-5 text-danger'>Business Summary</h2>
             <div className='d-flex flex-sm-column flex-md-column flex-lg-row justify-content-center'>
                 <div className='text-start mb-5 p-2'>
                     <h4 > <FontAwesomeIcon icon={faCheck} /> We Manufactured over 30+ Tools</h4>
