@@ -1,4 +1,4 @@
-# RIM COMPUTERS INVENTORY
+# RIM ELECTRIC TOOLS
 
 ## [Live Site Link](https://rim-electric-tools.web.app/)
 
