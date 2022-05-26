@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth'
 import { useParams } from 'react-router-dom';
 import { auth } from '../firebase.init';
+import toast from 'react-hot-toast';
 
 const Purchase = () => {
 
@@ -15,7 +16,7 @@ const Purchase = () => {
     const { _id, name, order_quantity } = tool;
 
     useEffect(() => {
-        const url = `http://localhost:5000/tool/${toolId}`
+        const url = `https://morning-badlands-27515.herokuapp.com/tool/${toolId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setTool(data));
@@ -38,7 +39,7 @@ const Purchase = () => {
         const newQuantity = parseInt(quantity);
         const updateQuantity = `${newQuantity}`;
         const toolQuantity = { updateQuantity };
-        const url = `http://localhost:5000/tool/${toolId}`;
+        const url = `https://morning-badlands-27515.herokuapp.com/tool/${toolId}`;
         fetch(url, {
             method: "PUT",
             headers: {
@@ -51,6 +52,7 @@ const Purchase = () => {
                 setTool(result);
                 setIsReload(!reload);
             });
+        toast.success('Order Quantity Updated !')
     };
 
     const handlePurchase = (event) => {
@@ -66,7 +68,7 @@ const Purchase = () => {
             phone: phone,
             address: address
         }
-        const url = `http://localhost:5000/order`
+        const url = `https://morning-badlands-27515.herokuapp.com/order`
         fetch(url, {
             method: "POST",
             headers: {
@@ -76,8 +78,8 @@ const Purchase = () => {
         })
             .then(res => res.json())
             .then(data => setOrder(data));
-
-    }
+        toast.success('Order Pleased Successfully !')
+    };
 
 
     return (

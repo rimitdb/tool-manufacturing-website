@@ -26,7 +26,7 @@ const MyProfile = () => {
             phone: data.phone,
             linkedin: data.linkedin
         }
-        const url = `http://localhost:5000/user/${id}`;
+        const url = `https://morning-badlands-27515.herokuapp.com/user/${id}`;
         fetch(url, {
             method: "PUT",
             headers: {

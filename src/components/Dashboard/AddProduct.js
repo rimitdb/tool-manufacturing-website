@@ -7,7 +7,7 @@ const AddProduct = () => {
 
     const onSubmit = data => {
 
-        const url = `http://localhost:5000/tool`;
+        const url = `https://morning-badlands-27515.herokuapp.com/tool`;
         fetch(url, {
             method: "POST",
             headers: {
