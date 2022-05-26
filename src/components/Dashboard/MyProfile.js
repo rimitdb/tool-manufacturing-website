@@ -19,24 +19,28 @@ const MyProfile = () => {
         });
     }, []);
 
-    const onSubmit = data => {
-
-        const url = `http://localhost:5000/user?email=${user.email}`;
+    const onSubmit = (data, id) => {
+        const userDetails = {
+            education: data.education,
+            location: data.location,
+            phone: data.phone,
+            linkedin: data.linkedin
+        }
+        const url = `http://localhost:5000/user/${id}`;
         fetch(url, {
-            method: "POST",
+            method: "PUT",
             headers: {
-                "content-type": "application/json"
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
 
-            body: JSON.stringify(data)
+            body: JSON.stringify(userDetails)
         })
             .then(res => res.json())
             .then(data => {
-
+                console.log(userDetails)
                 reset();
             });
-
-        toast("Profile Updated Successfully");
+        toast.success('Profile Updated Successfully')
     };
 
     return (
