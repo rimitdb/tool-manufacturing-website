@@ -1,12 +1,12 @@
-# RIM ELECTRIC TOOLS
+# TOOLS MANUFACTURING WEBSITE
 
 ## [Live Site Link](https://rim-electric-tools.web.app/)
 
 ## [Live Server Link](https://morning-badlands-27515.herokuapp.com/)
 
-## [Cline site code Link](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-rimitdb)
+## [Cline site code Link](https://github.com/rimitdb/tool-manufacturing-website)
 
-## [Server site code Link](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-rimitdb)
+## [Server site code Link](https://github.com/rimitdb/tool-manufacturing-website-server)
 
 ### Website Contents
 
