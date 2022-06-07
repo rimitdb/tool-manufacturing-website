@@ -12,10 +12,11 @@
 
 - Home page include following information:
 
-* It's a Tools Manufacturing website. Home page displaying slider images.
-* Display Product information
-* Reviews.
-* About US & Contact Us.
+* It's a Manufacturing website.
+* Home page displaying Product Information and Customer Reviews.
+* In dashboard section there will be Product management, Clients Management system.
+* 2 type of Users, Customer and Admin
+* User Authentication and Token System
 
 - User need to Register and sign-in to add product, add review and to check my order and payment information.
 
@@ -26,21 +27,18 @@
 * Email-password based authentication
 * Login with Google.
 
-- Blog page display following question answers
+### List of Technologies used in this project
 
-* Difference between `javascript` and `nodejs`
+- React
+- React Router
+- React Firebase Hooks
+- Bootstrap v5
+- React-Hot-Tost
+- firebase hosing for client site
+- heroku hosting for server
+- mongoDB for Database
 
-* When should you use `nodejs` and when should you use `mongodb`
+### Admin Access Credentials
 
-* What is the purpose of `jwt` and how does it work?
-
-  ### List of Technologies used in this project
-
-  - React
-  - React Router
-  - React Firebase Hooks
-  - Bootstrap v5
-  - React-Hot-Tost
-  - firebase hosing for client site
-  - heroku hosting for server
-  - mongoDB for Database
+E-Mail: intaj1443@gmail.com
+Pass: 12345678
